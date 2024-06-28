@@ -13,7 +13,7 @@
     background-position-y: -3.0667vh;
     position: fixed;
     display: flex;
-    background-image: url(resources/images/Background3.gif);
+    background-color: #000000;
 }
 
 .base {
@@ -321,9 +321,9 @@ a {
     visibility: hidden;
 }
 
-/* .background.loaded {
+.background.loaded {
     background-image: url(resources/images/Background3.gif);
-} */
+}
 
 @keyframes loading {
     from {
@@ -346,6 +346,7 @@ a {
     backdrop-filter: blur(10px);
     justify-content: center;
     align-items: center;
+    transition-delay: 0.5s;
     transition: all 0.5s;
     z-index: 200;
 }
@@ -372,9 +373,4 @@ a {
     margin-top: 85px;
     font-family: 'custom';
     font-size: 26.5px;
-}
-
-.hiddenimages {
-    opacity: 0;
-    position: absolute;
 }
