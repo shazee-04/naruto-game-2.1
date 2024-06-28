@@ -13,7 +13,7 @@
     background-position-y: -3.0667vh;
     position: fixed;
     display: flex;
-    background-color: #000000;
+    background-color: black;
 }
 
 .base {
@@ -323,54 +323,4 @@ a {
 
 .background.loaded {
     background-image: url(resources/images/Background3.gif);
-}
-
-@keyframes loading {
-    from {
-        transform: rotate(0turn);
-    }
-
-    to {
-        transform: rotate(2turn);
-    }
-}
-
-.loader{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    background-color:#ff00001b;
-    backdrop-filter: blur(10px);
-    justify-content: center;
-    align-items: center;
-    transition-delay: 0.5s;
-    transition: all 0.5s;
-    z-index: 200;
-}
-
-.loader--hidden{
-    opacity: 0;
-    visibility: hidden;
-    z-index: 0;
-}
-
-.loader::after{
-    content: "";
-    width: 21px;
-    height: 21px;
-    border: 10px solid;
-    border-color: #252525;
-    border-bottom-color: rgba(255, 61, 61, 0);
-    border-radius: 50%;
-    animation: loading 1s infinite;
-}
-
-.loader-inner {
-    position: fixed;
-    margin-top: 85px;
-    font-family: 'custom';
-    font-size: 26.5px;
 }
