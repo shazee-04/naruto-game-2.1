@@ -1,13 +1,3 @@
-document.onreadystatechange = function () {
-    if (document.readyState !== "complete") {
-        document.querySelector("#background").style.visibility = "hidden";
-        document.querySelector("#loader").style.visibility = "visible";
-    } else {
-        document.querySelector("#loader").style.display = "none";
-        document.querySelector("#background").style.visibility = "visible";
-    }
-};
-
 function movement(event) {
 
     if (event.key == "Enter") {
@@ -23,68 +13,67 @@ function movement(event) {
             deadbefore = 0;
         }
     }
-    if (isdead == 0) {
-        if (event.key == "d") {
-            if (scoreworker != 0) {
-                if (runfworker == 0) {
-                    if (runbworker == 0) {
-                        if (jumpworker == 0) {
-                            clearInterval(idleworker);
-                            clearInterval(runbworker);
-                            clearInterval(downworker);
-                            runsound.play();
-                            runforward();
-                        }
-                    }
-                }
-            }
-        }
 
-        if (event.key == "a") {
-            if (scoreworker != 0) {
+    if (event.key == "d") {
+        if (scoreworker != 0) {
+            if (runfworker == 0) {
                 if (runbworker == 0) {
-                    if (runfworker == 0) {
-                        if (jumpworker == 0) {
-                            clearInterval(idleworker);
-                            clearInterval(runfworker);
-                            clearInterval(downworker);
-                            runsound.play();
-                            runbackward();
-                        }
-                    }
-                }
-            }
-        }
-
-        if (event.key == "w") {
-            if (scoreworker != 0) {
-                if (jumpworker == 0) {
-                    if (intervalworker == 0) {
-                        runsound.pause();
-                        runsound.currentTime = 0;
+                    if (jumpworker == 0) {
                         clearInterval(idleworker);
-                        clearInterval(runfworker);
                         clearInterval(runbworker);
                         clearInterval(downworker);
-                        jump();
-                        jumpsound.play();
+                        runsound.play();
+                        runforward();
                     }
                 }
             }
         }
+    }
 
-        if (event.key == "s") {
-            if (scoreworker != 0) {
-                if (jumpworker == 0) {
-                    if (runfworker == 0) {
-                        if (runbworker == 0) {
-                            if (downworker == 0) {
-                                clearInterval(idleworker);
-                                down();
-                                downsound.play();
-                            }
+    if (event.key == "a") {
+        if (scoreworker != 0) {
+            if (runbworker == 0) {
+                if (runfworker == 0) {
+                    if (jumpworker == 0) {
+                        clearInterval(idleworker);
+                        clearInterval(runfworker);
+                        clearInterval(downworker);
+                        runsound.play();
+                        runbackward();
+                    }
+                }
+            }
+        }
+    }
 
+    if (event.key == "w") {
+        if (scoreworker != 0) {
+            if (jumpworker == 0) {
+                if (intervalworker == 0) {
+                    runsound.pause();
+                    runsound.currentTime = 0;
+                    clearInterval(idleworker);
+                    clearInterval(runfworker);
+                    clearInterval(runbworker);
+                    clearInterval(downworker);
+                    jump();
+                    jumpsound.play();
+                }
+            }
+        }
+    }
+
+    if (event.key == "s") {
+        if (scoreworker != 0) {
+            if (jumpworker == 0) {
+                if (runfworker == 0) {
+                    if (runbworker == 0) {
+                        if (downworker == 0) {
+                            clearInterval(idleworker);
+                            down();
+                            downsound.play();
                         }
+
                     }
                 }
             }
@@ -171,10 +160,10 @@ function intro() {
         vid.play();
         introcount = introcount + 1;
         if (escape1 == 1) {
-            document.getElementById("container").style.visibility = "visible";  //---------------------------------
-            //document.getElementById("background").classList.add("loaded");  //---------------------------------
             opacity2 = opacity2 - 2;
             vid.pause();
+            document.getElementById("container").style.visibility = "visible";  //---------------------------------
+            document.getElementById("background").classList.add("loaded");  //---------------------------------
             if (opacity2 == 0) {
                 a.muted = false;
                 a.currentTime = 0;
@@ -201,7 +190,7 @@ function intro() {
         }
         if (introcount > 1900) {
             document.getElementById("container").style.visibility = "visible"; //----------------------------------
-            //document.getElementById("background").classList.add("loaded");   //---------------------------------
+            document.getElementById("background").classList.add("loaded");   //---------------------------------
             opacity2 = opacity2 - 1;
         }
 
