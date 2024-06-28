@@ -1,10 +1,10 @@
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
-        document.querySelector("container").style.visibility = "hidden";
+        document.querySelector("body").style.visibility = "hidden";
         document.querySelector("#loader").style.visibility = "visible";
     } else {
         document.querySelector("#loader").style.display = "none";
-        document.querySelector("container").style.visibility = "visible";
+        document.querySelector("body").style.visibility = "visible";
     }
 };
 
